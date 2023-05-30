@@ -1,6 +1,6 @@
 #include "SPlayer.h"
 
-SPlayer::SPlayer() : body(30), fillColor(0, 0, 255), pos(0, 0) {
+SPlayer::SPlayer() : body(30), fillColor(0, 0, 255), pos(0, 0), isJumping(false) {
 	body.setFillColor(fillColor);
 	body.setPosition(pos);
 }
@@ -23,4 +23,12 @@ sf::Vector2f SPlayer::GetDimensions() {
 }
 void SPlayer::Draw(sf::RenderWindow& window) {
 	window.draw(body);
+}
+
+void SPlayer::SetIsJumping(bool jumping) {
+	isJumping = jumping;
+}
+
+bool SPlayer::GetIsJumping() {
+	return isJumping;
 }

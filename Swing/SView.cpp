@@ -1,15 +1,17 @@
 #include "SView.h"
 
-SView::SView() : viewWidth(600), viewHeight(600), window(sf::VideoMode(600, 600), "Swing", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize) {
+SView::SView() : viewWidth(600), viewHeight(600), window(sf::VideoMode(1800, 900), "Swing", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize) {
 
 }
 SView::~SView() {}
 void SView::Show() {
 	while (window.isOpen()) {
-		while (window.pollEvent(event)) {
-			Notify();
-			if (!window.isOpen()) break;
+		window.pollEvent(event);
+		if (event.type == sf::Event::Closed) {
+			window.close();
+			break;
 		}
+		Notify();
 		window.clear(sf::Color(255, 255, 255));
 
 		model.DrawAssets(window);

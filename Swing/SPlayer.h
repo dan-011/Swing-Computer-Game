@@ -14,10 +14,14 @@ public:
 	sf::Vector2f GetDimensions();
 	virtual void Draw(sf::RenderWindow& window) override;
 
+	void SetIsJumping(bool jumping);
+	bool GetIsJumping();
+
 private:
 	sf::CircleShape body;
 	sf::Color fillColor;
 	sf::Vector2f pos;
+	bool isJumping;
 };
 
 #endif

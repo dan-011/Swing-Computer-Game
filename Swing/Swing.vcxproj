@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="SAbstractObserver.h" />
     <ClInclude Include="SAsset.h" />
+    <ClInclude Include="SController.h" />
     <ClInclude Include="SIndivObservers.h" />
     <ClInclude Include="SModel.h" />
     <ClInclude Include="SPlatform.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="SView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SController.cpp" />
     <ClCompile Include="SMain.cpp" />
     <ClCompile Include="SindivObservers.cpp" />
     <ClCompile Include="SModel.cpp" />
