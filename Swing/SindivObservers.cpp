@@ -5,8 +5,7 @@ SCloseWindowObserver::SCloseWindowObserver(SView& vw) : view(vw) {
 }
 SCloseWindowObserver::~SCloseWindowObserver() {}
 void SCloseWindowObserver::Update() {
-	//if ((view.GetEvent().type == sf::Event::Closed) || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+	if ((view.GetEventReceived() && view.GetEvent().type == sf::Event::Closed) || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 		view.GetWindow().close();
 	}
 }

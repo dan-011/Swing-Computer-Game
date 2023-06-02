@@ -14,6 +14,7 @@ public:
 	sf::RenderWindow& GetWindow();
 	sf::Time GetElapsedTime();
 	SModel& GetModel();
+	bool GetEventReceived();
 
 private:
 	unsigned int viewWidth;
@@ -21,7 +22,7 @@ private:
 	sf::Event event;
 	sf::RenderWindow window;
 	SModel model;
-
+	bool eventReceived;
 	sf::Clock clock;
 
 };
